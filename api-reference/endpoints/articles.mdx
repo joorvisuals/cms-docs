@@ -1,0 +1,80 @@
+---
+title: Articles
+description: Create, retrieve, update, and delete knowledge base articles.
+---
+
+<Note>
+  These endpoints will be auto-generated from the OpenAPI spec once `openapi.json` is added to the repo root. The pages below serve as a placeholder reference.
+</Note>
+
+## List articles
+
+```bash
+GET /api/v1/articles
+```
+
+**Query parameters**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `company_id` | string | Filter by company |
+| `status` | string | `draft`, `published`, or `archived` |
+| `page` | integer | Page number (default: 1) |
+| `per_page` | integer | Results per page (default: 20, max: 100) |
+
+**Response**
+
+```json
+{
+  "data": [
+    {
+      "id": "art_01J...",
+      "title": "Onboarding Guide",
+      "status": "published",
+      "company_id": "cmp_01J...",
+      "created_at": "2026-01-15T10:00:00Z",
+      "updated_at": "2026-01-15T10:00:00Z"
+    }
+  ],
+  "meta": {
+    "total": 42,
+    "page": 1,
+    "per_page": 20
+  }
+}
+```
+
+## Get article
+
+```bash
+GET /api/v1/articles/:id
+```
+
+## Create article
+
+```bash
+POST /api/v1/articles
+```
+
+**Body**
+
+```json
+{
+  "title": "Onboarding Guide",
+  "body": "Welcome to our service...",
+  "company_id": "cmp_01J...",
+  "status": "draft"
+}
+```
+
+## Update article
+
+```bash
+PATCH /api/v1/articles/:id
+```
+
+## Delete article
+
+```bash
+DELETE /api/v1/articles/:id
+```

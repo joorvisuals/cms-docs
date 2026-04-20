@@ -1,33 +1,39 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: API Introduction
+description: Integrate ContentMaker into your own tools and workflows.
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Base URL
 
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+```
+https://app.contentmaker.space/api/v1
+```
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API requests require a Bearer token. See [Authentication](/api-reference/authentication) for details.
+
+## Rate limits
+
+The API is rate-limited to **60 requests per minute** per token. Exceeding this returns a `429 Too Many Requests` response.
+
+## Response format
+
+All responses are JSON. Successful responses return a `data` key; errors return `error` and `message` keys.
 
 ```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+{
+  "data": { ... }
+}
 ```
+
+```json
+{
+  "error": "not_found",
+  "message": "Article not found"
+}
+```
+
+## Versioning
+
+The current API version is `v1`. Breaking changes will be released under a new version with a deprecation notice.

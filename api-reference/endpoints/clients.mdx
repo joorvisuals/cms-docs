@@ -1,0 +1,43 @@
+---
+title: Clients
+description: Manage client companies via the API.
+---
+
+## List clients
+
+```bash
+GET /api/v1/companies
+```
+
+## Get client
+
+```bash
+GET /api/v1/companies/:id
+```
+
+## Create client
+
+```bash
+POST /api/v1/companies
+```
+
+**Body**
+
+```json
+{
+  "name": "Acme Corp",
+  "email": "contact@acme.com"
+}
+```
+
+## Update client
+
+```bash
+PATCH /api/v1/companies/:id
+```
+
+## Delete client
+
+```bash
+DELETE /api/v1/companies/:id
+```

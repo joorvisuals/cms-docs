@@ -1,0 +1,43 @@
+---
+title: Credits
+description: Query and manage credit balances and transactions.
+---
+
+## Get credit balance
+
+```bash
+GET /api/v1/companies/:id/credits
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "company_id": "cmp_01J...",
+    "balance": 42,
+    "updated_at": "2026-04-01T08:00:00Z"
+  }
+}
+```
+
+## List transactions
+
+```bash
+GET /api/v1/companies/:id/credit_transactions
+```
+
+## Add credits
+
+```bash
+POST /api/v1/companies/:id/credit_transactions
+```
+
+**Body**
+
+```json
+{
+  "amount": 10,
+  "note": "April top-up"
+}
+```

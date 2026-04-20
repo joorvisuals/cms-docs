@@ -1,0 +1,31 @@
+---
+title: Authentication
+description: Authenticate API requests with a Bearer token.
+---
+
+## Getting your API token
+
+1. Go to **Settings** → **API**
+2. Click **Generate Token**
+3. Copy the token — it won't be shown again
+
+## Using the token
+
+Pass the token in the `Authorization` header:
+
+```bash
+curl https://app.contentmaker.space/api/v1/articles \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+
+## Token scopes
+
+Tokens are scoped to your workspace. A token can read and write all resources your account has access to.
+
+## Revoking a token
+
+Go to **Settings** → **API** and click **Revoke** next to the token. Revoked tokens immediately stop working.
+
+<Warning>
+  Keep your API token secret. If compromised, revoke it immediately and generate a new one.
+</Warning>
